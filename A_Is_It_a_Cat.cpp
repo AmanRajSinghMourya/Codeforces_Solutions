@@ -33,57 +33,18 @@ void solve()
         cin >> n;
         string s;
         cin >> s;
-        int i = 0;
-        int flag = 0;
-        while (i < n && (s[i] == 'm' || s[i] == 'M'))
+        unordered_set<char> st;
+        for (int i = 0; i < n; i++)
         {
-            flag = 1;
-            i++;
+            st.insert(s[i]);
         }
-        if (flag != 1)
+        string temp;
+        for (auto it : st)
         {
-            cout << "NO" << endl;
-            continue;
+            temp += it;
         }
-        while (i < n && (s[i] == 'e' || s[i] == 'E'))
-        {
-            flag = 2;
-            i++;
-        }
-        if (flag != 2)
-        {
-            cout << "NO" << endl;
-            continue;
-        }
-        while (i < n && (s[i] == 'o' || s[i] == 'O'))
-        {
-            flag = 3;
-            i++;
-        }
-
-        if (flag != 3)
-        {
-            cout << "NO" << endl;
-            continue;
-        }
-        while (i < n && (s[i] == 'w' || s[i] == 'W'))
-        {
-            flag = 4;
-            i++;
-        }
-        if (flag != 4)
-        {
-            cout << "NO" << endl;
-            continue;
-        }
-
-        if (i < n)
-        {
-            cout << "NO" << endl;
-            continue;
-        }
-        // write code her
-        cout << "YES" << endl;
+        cout << temp << endl;
+        // write code here
     }
 }
 int main()
